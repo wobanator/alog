@@ -424,6 +424,8 @@ public:
 public:
     IChain() = default;
     IChain(const std::initializer_list<ItemPtr>& items) { add(items); }
+    // Whether copy is ok, depends on Class
+    ALOG_NO_COPY_MOVE(IChain);
     virtual ~IChain() = default;
 
     template<typename... Args>
