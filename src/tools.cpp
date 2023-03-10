@@ -15,6 +15,7 @@ namespace Internal {
 struct StaticCheck
 {
     StaticCheck() { value = true; }
+    ALOG_NO_COPY_MOVE(StaticCheck);
     ~StaticCheck() { value = false; }
     bool value;
 };
