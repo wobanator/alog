@@ -8,6 +8,7 @@ class File : public ISink
 {
 public:
     File(const char* fileName);
+    ALOG_NO_COPY_MOVE(File);
     ~File() override;
 
     void write(const Buffer& buffer, const Record& record) override;
