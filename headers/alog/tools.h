@@ -203,7 +203,9 @@ public:
 
     template<typename... Args>
     inline void appendFmtString(const char* format, Args&&... args) {
-        size_t sz = snprintf(nullptr, 0, format, std::forward<Args>(args)...);
+        auto sz = snprintf(nullptr, 0, format, std::forward<Args>(args)...);
+        assert(sz >= 0);
+        if(sz < 0) return; 
         auto target = allocate_copy(sz);
         auto result = snprintf((char*)target, sz+1, format, std::forward<Args>(args)...);
         assert(result == sz);
