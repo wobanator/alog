@@ -253,6 +253,9 @@ public:
         m_instance = static_cast<T*>(this);
     }
 
+    // No moving or copying without ref-counting
+    ALOG_NO_COPY_MOVE(Singleton);
+
     ~Singleton() {
         assert(m_instance);
         m_instance = nullptr;
