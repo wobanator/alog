@@ -10,6 +10,7 @@ public:
                    const char* module,
                    Mode mode = PassOrReject,
                    ALog::Comparison1 comparison = ALog::GreaterEqual);
+    ALOG_NO_COPY_MOVE(SeverityModule);
     ~SeverityModule();
 
 protected:

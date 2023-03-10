@@ -12,6 +12,7 @@ class Pipeline : public ISink
 {
 public:
     Pipeline();
+    ALOG_NO_COPY_MOVE(Pipeline);
     ~Pipeline() override;
 
     void reset();

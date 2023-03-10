@@ -7,6 +7,7 @@ class Default : public IFormatter
 {
 public:
     Default();
+    ALOG_NO_COPY_MOVE(Default);
     ~Default() override;
     Buffer format(const Record& record) const override;
 

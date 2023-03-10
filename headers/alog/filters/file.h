@@ -7,6 +7,7 @@ class File : public IFilter
 {
 public:
     File(const char* file, bool pass = true, Mode mode = PassOrReject);
+    ALOG_NO_COPY_MOVE(File);
     ~File();
 
 protected:

@@ -22,6 +22,7 @@ public:
     };
 
     Logger();
+    ALOG_NO_COPY_MOVE(Logger);
     ~Logger();
 
     void setupDefaultConfig();

@@ -13,7 +13,7 @@ class QtQmlAdapter : public ALog::Internal::Singleton<QtQmlAdapter>
 #endif
 public:
     QtQmlAdapter(bool forwardToNative = false);
-    QtQmlAdapter(const QtQmlAdapter&) = delete;
+    ALOG_NO_COPY_MOVE(QtQmlAdapter);
     ~QtQmlAdapter();
 
 private:

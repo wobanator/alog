@@ -10,6 +10,7 @@ public:
                  const std::string& fileName,
                  Mode mode = PassOrReject,
                  ALog::Comparison1 comparison = ALog::GreaterEqual);
+    ALOG_NO_COPY_MOVE(SeverityFile);
     ~SeverityFile();
 
 protected:

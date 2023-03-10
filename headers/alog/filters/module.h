@@ -7,6 +7,7 @@ class Module : public IFilter
 {
 public:
     Module(const char* module, bool pass = true, Mode mode = PassOrReject);
+    ALOG_NO_COPY_MOVE(Module);
     ~Module();
 
 protected:
