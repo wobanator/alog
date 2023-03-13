@@ -1,5 +1,6 @@
 #pragma once
 #include <mutex>
+#include <optional>
 #include <vector>
 #include <alog/logger_impl.h>
 
@@ -46,14 +47,11 @@ public:
 
         } else {
             // Add record to queue
-
-            Record throwMe (Record::uninitialized_tag{});
-            bool throwMeValid { false };
+            std::optional<Record> throwMe;
             bool abort { false };
 
             if (record.hasFlags(Record::Flags::Throw)) {
                 throwMe = record;
-                throwMeValid = true;
             }
 
             if (record.hasFlags(Record::Flags::Abort)) {
@@ -74,8 +72,8 @@ public:
             if (abort)
                 alog_abort();
 
-            if (throwMeValid)
-                alog_exception(throwMe.getMessage(), throwMe.getMessageLen());
+            if (throwMe)
+                alog_exception(throwMe->getMessage(), throwMe->getMessageLen());
         }
     }
 
