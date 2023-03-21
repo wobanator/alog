@@ -143,8 +143,10 @@ public:
     }
 
     inline ~LongSSO() {
-        if (m_deleteLongBuf)
+        if (m_deleteLongBuf){
             delete m_longBuf;
+            m_deleteLongBuf = false; //Not 100% sure why this is needed, but it makes clang-sa happy
+        }
     }
 
     inline operator bool() const { return getStringLen() != 0; }
