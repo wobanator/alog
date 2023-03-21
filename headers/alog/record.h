@@ -134,7 +134,7 @@ struct Record
     Record&& quotes() { flagsOn(Flags::AutoQuote); return std::move(*this); }
     Record&& no_quotes() { flagsOn(Flags::NoAutoQuote); return std::move(*this); }
 
-    Severity severity {};
+    Severity severity {Minimal};
     int line {};
     const char* filenameFull {};
     const char* filenameOnly {};
