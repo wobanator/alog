@@ -17,7 +17,7 @@ void logArray(Record& record, size_t sz, Iter begin, Iter end);
 
 namespace ALog {
 
-enum Severity {
+enum Severity:int {
     Minimal,
     Verbose = Minimal,
     Debug,
